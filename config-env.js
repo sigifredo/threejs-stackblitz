@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.render(scene, camera);
 
     // Se configura la cámara
-    camera.position.z = 3;
+    camera.position.z = 5;
 
     // Se configuran los controles
     controls.enabled = true;
