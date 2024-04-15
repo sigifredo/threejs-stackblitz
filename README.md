@@ -1,3 +1,3 @@
-# threejs-stackblitz
+# ThreeJS template
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/sigifredo/threejs-stackblitz)
+Plantilla de ThreeJS con el código base para empezar a trabajar.
