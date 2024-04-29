@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas: canvas,
     });
     const scene = new THREE.Scene();
+    const cameraGroup = new THREE.Group();
     const camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight
     );
+    cameraGroup.add(camera);
     const controls = new OrbitControls(camera, canvas);
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
 
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Se agregan los objetos a la escena
-    scene.add(camera);
+    scene.add(cameraGroup);
     scene.add(ambientLight);
 
     // Se agrega la función de configuración
@@ -59,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Se configura el loop de renderizado
     const render = () => {
         if (window.draw) {
-            window.draw(clock.getElapsedTime());
+            window.draw(clock.getElapsedTime(), camera, cameraGroup);
         }
 
         controls.update();
